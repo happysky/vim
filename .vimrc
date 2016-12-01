@@ -412,45 +412,13 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " My Bundles here:
 "
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
 " original repos on github
-Plugin 'tpope/vim-fugitive'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'Yggdroot/indentLine'
-let g:indentLine_char = '┊'
-"ndle 'tpope/vim-rails.git'
-" vim-scripts repos
-Plugin 'L9'
-Plugin 'FuzzyFinder'
-" non github repos
-Plugin 'https://github.com/wincent/command-t.git'
-Plugin 'Auto-Pairs'
-Plugin 'python-imports.vim'
-Plugin 'CaptureClipboard'
-Plugin 'ctrlp-modified.vim'
-Plugin 'last_edit_marker.vim'
-Plugin 'synmark.vim'
-"Plugin 'Python-mode-klen'
-Plugin 'SQLComplete.vim'
-Plugin 'Javascript-OmniCompletion-with-YUI-and-j'
-"Plugin 'JavaScript-Indent'
-"Plugin 'Better-Javascript-Indentation'
-Plugin 'jslint.vim'
-Plugin "pangloss/vim-javascript"
-Plugin 'Vim-Script-Updater'
-Plugin 'ctrlp.vim'
-Plugin 'tacahiroy/ctrlp-funky'
-Plugin 'jsbeautify'
-Plugin 'The-NERD-Commenter'
-"django
-Plugin 'django_templates.vim'
-Plugin 'Django-Projects'
-
-"Plugin 'FredKSchott/CoVim'
-"Plugin 'djangojump'
 " ...
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
