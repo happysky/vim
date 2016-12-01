@@ -18,7 +18,7 @@ mv -f ~/.vim ~/.vim_old
 mv -f ~/.vimrc ~/.vimrc_old
 cd ~/ && git clone git@github.com:happysky/vim.git ./.vim
 ln -s ~/.vim/.vimrc ~/.vimrc
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+git submodule update --init --recursive
 echo "ma6174正在努力为您安装bundle程序" > ma6174
 echo "安装完毕将自动退出" >> ma6174
 echo "请耐心等待" >> ma6174
