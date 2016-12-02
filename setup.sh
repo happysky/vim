@@ -25,4 +25,24 @@ echo "安装完毕将自动退出" >> ma6174
 echo "请耐心等待" >> ma6174
 vim ma6174 -c "BundleInstall" -c "q" -c "q"
 rm ma6174
+#cmake需要安装gcc
+#sudo yum install gcc-c++
+
+#youCompleteMe 需要先安装 cmake
+#wget "https://cmake.org/files/v3.7/cmake-3.7.1-Linux-x86_64.tar.gz" ~/.
+#tar zxvf cmake-3.7.1-Linux-x86_64.tar.gz
+#mv cmake-3.7.1-Linux-x86_64 cmake
+#sudo cp ~/cmake /usr/local/cmake
+#sudo echo export PATH="$PATH:/usr/local/cmake" >> /etc/profile
+#sudo source /etc/profile
+
+#安装 youCompleteMe
+cd ~/.vim/bundle/YouCompleteMe/
+git submodule update --init --recursive
+./install.py
+
+#安装tern_for_vim
+cd ~/.vim/bundle/tern_for_vim
+npm install
+
 echo "安装完成"
