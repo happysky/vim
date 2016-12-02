@@ -35,10 +35,14 @@ filetype plugin indent on     " required!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "nerdtree配置开始
 
-"当打开vim且没有文件时自动打开NERDTree
 map <F2> :NERDTreeToggle<CR>
-autocmd vimenter * if !argc() | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd StdinReadPre * let s:std_in=1
+"当打开vim且没有文件时自动打开NERDTree
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"当vim打开目录时候自动打开NERDTree
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+"当只剩一个NERDTree时自动退出
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeIgnore=['\.pyc']
 
 "nerdtree配置结束
