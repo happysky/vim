@@ -24,6 +24,7 @@ Plugin 'kien/ctrlp.vim' "模糊查找文件
 Plugin 'jiangmiao/auto-pairs' "自动匹配，括号补全
 Plugin 'Valloric/YouCompleteMe' "自动匹配，括号补全
 Plugin 'marijnh/tern_for_vim' "
+Plugin 'vim-syntastic/syntastic' "
 Plugin 'pangloss/vim-javascript' "
 
 " original repos on github
@@ -43,7 +44,8 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 "当只剩一个NERDTree时自动退出
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let NERDTreeIgnore=['\.pyc']
+"忽略文件
+let NERDTreeIgnore=['\.pyc','\.gz$','\.zip$','\.jpeg$','\.jpg']
 
 "nerdtree配置结束
 
