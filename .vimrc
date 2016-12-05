@@ -1,3 +1,7 @@
+set nocompatible " 不要支持vi模式
+syntax on " 支持语法高亮
+filetype plugin indent on " 加载插件和支持缩进"
+
 "禁止生成临时文件
 set nobackup
 set noswapfile
@@ -84,13 +88,13 @@ let g:ycm_complete_in_strings = 1
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 "回车即选中当前项"
-inoremap <expr> <CR>       pumvisible() ? '<C-y>' : '\<CR>'
+inoremap <expr> <CR>       pumvisible() ? '<C-y>' : '<CR>'
 
 "上下左右键行为"
-inoremap <expr> <Down>     pumvisible() ? '\<C-n>' : '\<Down>'
-inoremap <expr> <Up>       pumvisible() ? '\<C-p>' : '\<Up>'
-inoremap <expr> <PageDown> pumvisible() ? '\<PageDown>\<C-p>\<C-n>' : '\<PageDown>'
-inoremap <expr> <PageUp>   pumvisible() ? '\<PageUp>\<C-p>\<C-n>' : '\<PageUp>'
+inoremap <expr> <Down>     pumvisible() ? '\<C-n>' : '<Down>'
+inoremap <expr> <Up>       pumvisible() ? '\<C-p>' : '<Up>'
+inoremap <expr> <PageDown> pumvisible() ? '\<PageDown>\<C-p>\<C-n>' : '<PageDown>'
+inoremap <expr> <PageUp>   pumvisible() ? '\<PageUp>\<C-p>\<C-n>' : '<PageUp>'
 
 "youCompleteMe配置结束
 
