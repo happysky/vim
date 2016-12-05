@@ -1,3 +1,14 @@
+"表示在编辑模式的时候按退格键的时候退回缩进的长度softtabstop
+set softtabstop=4
+"表示每一级缩进的长度shiftwidth
+set sw=4
+"Tab键宽度tabstop
+set ts=4
+set expandtab
+set autoindent
+" 显示行号
+set number"
+
 set nocompatible " 不要支持vi模式
 syntax on " 支持语法高亮
 filetype plugin indent on " 加载插件和支持缩进"
@@ -49,7 +60,9 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 "当只剩一个NERDTree时自动退出
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "忽略文件
-let NERDTreeIgnore=['\.pyc','\.gz$','\.zip$','\.jpeg$','\.jpg']
+let NERDTreeIgnore=['\.pyc$','\.gz$','\.zip$','\.jpeg$','\.jpg$']
+"显示隐藏文件
+let NERDTreeShowHidden=1
 
 "nerdtree配置结束
 
@@ -70,6 +83,7 @@ let g:ycm_seed_identifiers_with_syntax=1
 
 "是否在注释中也开启补全"
 let g:ycm_complete_in_comments=1
+"注释和字符串中的文字也会被收入补全
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
 
 "开始补全的字符数"
@@ -87,14 +101,20 @@ let g:ycm_complete_in_strings = 1
 "离开插入模式后自动关闭预览窗口"
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
+" 设置在下面几种格式的文件上屏蔽ycm
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar' : 1,
+      \ 'nerdtree' : 1,
+      \}
+
 "回车即选中当前项"
-inoremap <expr> <CR>       pumvisible() ? '<C-y>' : '<CR>'
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
 
 "上下左右键行为"
-inoremap <expr> <Down>     pumvisible() ? '\<C-n>' : '<Down>'
-inoremap <expr> <Up>       pumvisible() ? '\<C-p>' : '<Up>'
-inoremap <expr> <PageDown> pumvisible() ? '\<PageDown>\<C-p>\<C-n>' : '<PageDown>'
-inoremap <expr> <PageUp>   pumvisible() ? '\<PageUp>\<C-p>\<C-n>' : '<PageUp>'
+inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "<Down>"
+inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "<Up>"
+inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "<PageDown>"
+inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "<PageUp>"
 
 "youCompleteMe配置结束
 
