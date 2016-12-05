@@ -45,4 +45,7 @@ git submodule update --init --recursive
 cd ~/.vim/bundle/tern_for_vim
 npm install
 
+#安装jshint
+sudo npm install -g jshint
+
 echo "安装完成"
