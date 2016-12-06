@@ -4,11 +4,25 @@ set softtabstop=4
 set sw=4
 "Tab键宽度tabstop
 set ts=4
+set smarttab 
+"编辑时将所有 Tab 替换为空格
+set et
 set expandtab
+"保持上一行相同的缩进
 set autoindent
+
+"设置编码
+set encoding=utf8
+set langmenu=zh_CN.UTF-8
+set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030   
+
+
+"设置不折行
+set nowrap
 " 显示行号
 set number"
-
+" 显示标尺
+set ruler           
 set nocompatible " 不要支持vi模式
 syntax on " 支持语法高亮
 filetype plugin indent on " 加载插件和支持缩进
@@ -40,6 +54,8 @@ Plugin 'Valloric/YouCompleteMe' "自动匹配，括号补全
 Plugin 'marijnh/tern_for_vim' "补全
 Plugin 'vim-syntastic/syntastic' "语法检测
 Plugin 'pangloss/vim-javascript' "
+Plugin 'vim-airline/vim-airline' "底部状态栏
+Plugin 'vim-airline/vim-airline-themes' "底部状态栏皮肤
 
 call vundle#end()
 
@@ -135,4 +151,24 @@ filetype plugin indent on     " required!
     let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 0
     let g:syntastic_javascript_checkers = ['jshint']    
+"}}}}
+
+"vim-airline/vim-airline{{{{
+    let g:airline_theme="dark" 
+
+    "这个是安装字体后 必须设置此项 
+    "let g:airline_powerline_fonts = 1   
+
+    "打开tabline功能,方便查看Buffer和切换，这个功能比较不错
+    "我还省去了minibufexpl插件，因为我习惯在1个Tab下用多个buffer
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#buffer_nr_show = 1
+
+    "设置切换Buffer快捷键
+    noremap <C-N> :bn<CR>
+    nnoremap <C-P> :bp<CR>
+
+    " 关闭状态显示空白符号计数,这个对我用处不大
+    let g:airline#extensions#whitespace#enabled = 0
+    let g:airline#extensions#whitespace#symbol = '!'
 "}}}}
