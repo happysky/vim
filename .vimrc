@@ -156,7 +156,7 @@ filetype plugin indent on     " required!
 "}}}}
 
 "vim-airline/vim-airline{{{{
-    let g:airline_theme="dark" 
+    let g:airline_theme="luna" 
 
     "这个是安装字体后 必须设置此项 
     "let g:airline_powerline_fonts = 1   
