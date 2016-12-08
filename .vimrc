@@ -16,6 +16,8 @@ set encoding=utf8
 set langmenu=zh_CN.UTF-8
 set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030   
 
+"使用256颜色,否则airline颜色无法显示
+set t_Co=256
 
 "设置不折行
 set nowrap

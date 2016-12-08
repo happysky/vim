@@ -32,8 +32,8 @@ rm ma6174
 #wget "https://cmake.org/files/v3.7/cmake-3.7.1-Linux-x86_64.tar.gz" ~/.
 #tar zxvf cmake-3.7.1-Linux-x86_64.tar.gz
 #mv cmake-3.7.1-Linux-x86_64 cmake
-#sudo cp ~/cmake /usr/local/cmake
-#sudo echo export PATH="$PATH:/usr/local/cmake" >> /etc/profile
+#sudo cp -r ~/cmake /usr/local/cmake
+#sudo echo export PATH="$PATH:/usr/local/cmake/bin" >> ~/.bashrc
 #sudo source /etc/profile
 
 #安装 youCompleteMe
