@@ -35,6 +35,7 @@ rm ma6174
 #sudo cp -r ~/cmake /usr/local/cmake
 #sudo echo export PATH="$PATH:/usr/local/cmake/bin" >> ~/.bashrc
 #sudo source /etc/profile
+#退出终端，重新登录;
 
 #安装 youCompleteMe
 cd ~/.vim/bundle/YouCompleteMe/
