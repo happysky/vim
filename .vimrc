@@ -49,11 +49,12 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-scripts/L9'
 
 " My Bundles here:
+Plugin 'flazz/vim-colorschemes' "配色插件
 Plugin 'scrooloose/nerdtree' "文件列表
 Plugin 'kien/ctrlp.vim' "模糊查找文件
 Plugin 'jiangmiao/auto-pairs' "自动匹配，括号补全
 Plugin 'Valloric/YouCompleteMe' "自动匹配，括号补全
-Plugin 'marijnh/tern_for_vim' "补全
+Plugin 'marijnh/tern_for_vim' "JS补全
 Plugin 'vim-syntastic/syntastic' "语法检测
 Plugin 'pangloss/vim-javascript' "
 Plugin 'vim-airline/vim-airline' "底部状态栏
@@ -82,6 +83,8 @@ filetype plugin indent on     " required!
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Valloric/YouCompleteMe{{{{
+
+
     "默认配置文件路径"
     let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
@@ -175,3 +178,17 @@ filetype plugin indent on     " required!
     let g:airline#extensions#whitespace#symbol = '!'
     "let g:airline_symbols.maxlinenr = ''
 "}}}}
+
+
+"vmarijnh/tern_for_vim{{{{
+    let g:tern_show_signature_in_pum = 1 "提示显示参数
+"}}}}
+
+
+"vflazz/vim-colorschemes{{{{
+    colorscheme darkZ
+
+    hi Pmenu        ctermfg=142        ctermbg=DarkGray    cterm=None
+    hi PmenuSel     ctermfg=142        ctermbg=088         cterm=Bold
+"}}}}
+
